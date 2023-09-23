@@ -18,7 +18,7 @@
 #define CMD_CHAIN       3
 #define CMD_NORM        0
 
-/* 1 if system getline is been used */
+/* 1 if system getline is being used */
 #define USE_GETLINE 0
 #define USE_STRTOK 0
 
@@ -72,20 +72,20 @@ struct liststr *next;
  */
 typedef struct passinfo
 {
-char *path;
 char *arg;
 char **argv;
-int linecount_flag;
-unsigned int line_count;
+char *path;
 int argc;
+unsigned int line_count;
 int err_num;
-char **environ;
-int env_changed;
-int status;
+int linecount_flag;
 char *fname;
 list_t *env;
 list_t *history;
 list_t *alias;
+char **environ; 
+int env_changed;
+int status;
 char **cmd_buf;
 int cmd_buf_type;
 int readfd;
@@ -94,7 +94,7 @@ int histcount;
 
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-	                0, 0, 0}
+	0, 0, 0}
 
 /**
  * struct builtin - Includes a builtin string and related function
